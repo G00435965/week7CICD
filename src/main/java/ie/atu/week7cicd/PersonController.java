@@ -12,8 +12,10 @@ public class PersonController
 {
 
     private final PersonService service;
+
     public PersonController(PersonService service)
     {
+
         this.service = service;
     }
 
@@ -23,17 +25,17 @@ public class PersonController
     {
         return service.create(person);
     }
-/*
+
     @GetMapping
     public List<Person> all()
     {
         return service.findAll();
     }
- */
-    @GetMapping("/{id}")
-    public Person byEmployeeId(@PathVariable String id)
+
+    @GetMapping("/employee/{employeeId}")
+    public Person byEmployeeId(@PathVariable String employeeId)
     {
-        return service.findByEmployeeId(id);
+        return service.findByEmployeeId(employeeId);
     }
 
     @PutMapping("/{id}")
